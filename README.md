@@ -7,8 +7,7 @@
 ---
 
 ## 🎥 Demo
-![Demo Screenshot](static/images/demo.png)  
-*(Add a GIF or screenshot of your running app here)*
+![Demo Screenshot](https://github.com/talha-4302/Sales-forecasting-using-Machine-Learning-Algorithms/blob/main/assets/main_page_1.png)  
 
 ---
 
@@ -53,3 +52,4 @@ pip install -r requirements.txt
 
 # Run the app
 python app.py
+
