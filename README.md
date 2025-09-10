@@ -7,7 +7,13 @@
 ---
 
 ## 🎥 Demo
-![Demo Screenshot](https://github.com/talha-4302/Sales-forecasting-using-Machine-Learning-Algorithms/blob/main/assets/main_page_1.png)  
+<p >
+  <img src="https://github.com/talha-4302/Sales-forecasting-using-Machine-Learning-Algorithms/blob/main/assets/main_page_1.png" width="40%">
+  <img src="https://github.com/talha-4302/Sales-forecasting-using-Machine-Learning-Algorithms/blob/main/assets/forecast_input.png" width="50%">
+
+</p>
+
+![License](https://github.com/talha-4302/Sales-forecasting-using-Machine-Learning-Algorithms/blob/main/assets/final_forecast.png)
 
 ---
 
@@ -52,4 +58,5 @@ pip install -r requirements.txt
 
 # Run the app
 python app.py
+
 
