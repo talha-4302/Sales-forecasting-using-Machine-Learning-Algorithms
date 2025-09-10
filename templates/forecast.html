@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forecast</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&family=Poppins:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        .availability-form {
+            margin-top: -50px;
+            z-index: 2;
+            position: relative;
+        }
+
+        @media screen and (max-width: 575px) {
+            .availability-form {
+                margin-top: 25px;
+                padding: 0, 35;
+            }
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --teal: #2ec1ac;
+            --teal_hover: #279e8c;
+
+        }
+
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .h-font {
+            font-family: 'Merienda', cursive;
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+
+        .custom-bg {
+            background-color: var(--teal);
+            border: 1px solid var(--teal);
+        }
+
+        .custom-bg:hover {
+            background-color: var(--teal_hover);
+            border-color: var(--teal_hover);
+        }
+
+        .h-line {
+            width: 150px;
+            margin: 0 auto;
+            height: 1.7px;
+        }
+
+        .custom-file-upload {
+            background-color: var(--teal);
+            border: 1px solid var(--teal);
+        }
+
+        .custom-file-upload:hover {
+            background-color: var(--teal_hover);
+            border-color: var(--teal_hover);
+        }
+    </style>
+
+    <style>
+          
+        
+        .plot {
+            text-align: center;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white px-lg-3 py-leg-2 shadow-sm sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand me-5 fw-bold fs-3 h-font" href="index.php">SLF</a>
+            <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link active me-2" aria-current="page">Home</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="additional_plots.html" class="nav-link me-2">Accuracy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="forecast.html" class="nav-link me-2">Forecast</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    
+    <div class ='plot'>
+
+        <h1>THE FORECAST</h1>
+       
+        <img src="{{ fplot }}" alt="Additional Plot 1">
+    
+    </div>
+
+    <!-- Form to input data -->
+    <br>
+    <br>
+    
+        
+
+   
+
+
+
+
+    <div class="container availability-form ">
+        <div class="row">
+          <div class="col-lg-8 bg-white shadow p-4 rounded "style ="left:300px;">
+            
+            <div class="w-200"><form action="/process_input" method="post">
+                                    <h3 class="mb-3" style="font-size: 18px;"><b>Input Date</b></h3>
+                                    <div class="d-flex">
+                                      
+                                          <div class="me-3 col-md-12 ">
+                                          
+                                          <input type="text" id="input_data" name="input_data">
+                                          <button type="submit" name="submit" class="btn text-white shadow-none custom-bg">Submit</button>
+                                          <br>
+                                          <br>
+                                          {% if processed_output %}
+
+                                                <h3 class="mb-3" style="font-size: 18px;"><b>Sales:{{ processed_output }}</b></h3>
+                                                
+                                                    
+                                            
+                                         {% endif %}
+                                        
+                                        </div>
+                                          
+                                          
+                                          
+                                    </div> 
+                                    <div class="col-lg-1 mb-lg-3 mt-2 ">
+                                        
+                                    </div>
+                          </form>  
+          </div>
+          </div>
+          </div>
+          </div>
+
+
+
+    
+    
+    <div class="container-fluid bg-white mt-5">
+        <div class="row">
+            <div class="col-lg-4 p-4">
+                <h3 class="h-font fw-bold fs-3 mb-2">
+                    <p class="bi bi-shop">
+                        Sales forecasting Prediction
+                    </p>
+                </h3>
+                <p>Sales forecasting is the process of estimating future revenue by predicting how much of a product or service will sell in the next week, month, quarter, or year. At its simplest, a sales forecast is a projected measure of how a market will respond to a company's go-to-market efforts.
+                </p>
+            </div>
+            <div class="col-lg-4 p-4">
+                <h5 class="mb-3">Email</h5>
+                <a href="mailto:habib15-4284@diu.edu.bd" class="d-inline-block mb-2 text-dark text-decoration-none"><i class="bi bi-forward-fill"></i>Ahasan Habib</a>
+                <br>
+                <a href="mailto:talha15-4302@diu.edu.bd" class="d-inline-block mb-2 text-dark text-decoration-none"><i class="bi bi-forward-fill"></i>Mohamad Talha</a>
+                <br>
+                <a href="mailto:sakid15-4313@diu.edu.bd" class="d-inline-block mb-2 text-dark text-decoration-none"><i class="bi bi-forward-fill"></i>Rihyad Mahamud Sajid</a>
+                <br>
+                <a href="mailto:durjoy15-4304@diu.edu.bd" class="d-inline-block mb-2 text-dark text-decoration-none"><i class="bi bi-forward-fill"></i>Naimur Rahaman Durjoy</a>
+            </div>
+            <div class="col-lg-4 p-4">
+                <h5 class="mb-3">Follow us</h5>
+                <a href="#" class="d-inline-block text-dark text-decoration-none mb-2"><i
+                        class="bi bi-twitter-x me-2"></i>Twiter</a><br>
+                <a href="#" class="d-inline-block text-dark text-decoration-none mb-2"><i
+                        class="bi bi-facebook me-2"></i>Facebook</a><br>
+                <a href="#" class="d-inline-block text-dark text-decoration-none mb-2"><i
+                        class="bi bi-instagram "></i>Instagram</a><br>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <h6 class="text-center bg-dark text-white p-3 m-0">Daffodil International University</h6>
+    </footer>
+
+
+</body>
+</html>
